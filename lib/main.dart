@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:navigation_example/simpleTransferData.dart';
 import 'package:navigation_example/transferDataByName.dart';
+import 'package:navigation_example/transferDataThroughTextField/page1.dart';
 import 'package:navigation_example/transferDataWithOnGenerateRoute.dart';
 import 'package:navigation_example/user.dart';
 
@@ -11,7 +12,7 @@ void main() {
 class MyApp extends StatelessWidget {
   const MyApp({super.key});
 
-  // @override
+// @override
   // Widget build(BuildContext context) {
   //   return MaterialApp(
   //     home: const TransferDataByNamePage1(),
@@ -29,23 +30,31 @@ class MyApp extends StatelessWidget {
   //   );
   // }
 
+  // @override
+  // Widget build(BuildContext context) {
+  //   return MaterialApp(
+  //     home: const TransferDataWithOnGenerateRoutePage1(),
+  //     onGenerateRoute: (settings) {
+  //       switch (settings.name) {
+  //         case '/':
+  //           return MaterialPageRoute(
+  //               builder: (context) =>
+  //                   const TransferDataWithOnGenerateRoutePage1());
+  //         case '/second':
+  //           User? user = settings.arguments as User?;
+  //           return MaterialPageRoute(
+  //               builder: (context) =>
+  //               TransferDataWithOnGenerateRoutePage2(user!));
+  //       }
+  //       return null;
+  //     },
+  //   );
+  // }
+
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
-      home: const TransferDataWithOnGenerateRoutePage1(),
-      onGenerateRoute: (settings) {
-        switch (settings.name) {
-          case '/':
-            return MaterialPageRoute(
-                builder: (context) =>
-                    const TransferDataWithOnGenerateRoutePage1());
-          case '/second':
-            User? user = settings.arguments as User?;
-            return MaterialPageRoute(
-                builder: (context) =>
-                TransferDataWithOnGenerateRoutePage2(user!));
-        }
-      },
+    return const MaterialApp(
+        home: Page1(),
     );
   }
 }
